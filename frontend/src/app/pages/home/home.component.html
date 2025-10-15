@@ -1,1 +1,9 @@
-<app-form></app-form>
+<div class="container">
+  <app-form *ngIf="!data" (formSubmit)="onSubmit($event)"></app-form>
+
+  <app-generator
+    *ngIf="data"
+    [data]="data!"
+    (goBack)="data = null"
+  ></app-generator>
+</div>
