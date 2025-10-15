@@ -1,0 +1,56 @@
+<main class="generator-container">
+  <section class="generator-card" aria-labelledby="generator-title">
+    <header class="generator-header">
+      <h1 id="generator-title" class="generator-title">Gerador de Dietas</h1>
+      <p class="generator-subtitle">
+        Clique no botão abaixo para gerar sua dieta personalizada com base nos
+        seus dados.
+      </p>
+    </header>
+
+    <div class="actions">
+      <app-button
+        class="btn"
+        (clicked)="onGenerate()"
+        [attr.aria-busy]="isLoading"
+        [text]="
+          isLoading ? 'Parar geração da dieta' : 'Gerar dieta personalizada'
+        "
+      >
+        <span *ngIf="!isLoading">⚡ Gerar dieta</span>
+        <span *ngIf="isLoading" class="loading">
+          <span class="spinner" role="status" aria-label="Carregando..."></span>
+          Gerando dieta...
+        </span>
+      </app-button>
+    </div>
+
+    <article
+      class="result-area"
+      *ngIf="output; else emptyState"
+      aria-live="polite"
+      aria-atomic="false"
+    >
+      <h2 class="visually-hidden">Resultado da dieta</h2>
+      <pre tabindex="0">{{ output }}</pre>
+    </article>
+
+    <ng-template #emptyState>
+      <section class="placeholder" role="status" aria-live="polite">
+        <p>
+          Nenhum resultado gerado ainda. Clique em “Gerar dieta” para começar.
+        </p>
+      </section>
+    </ng-template>
+
+    <footer class="generator-footer">
+      <app-button
+        class="btn-back"
+        (click)="handleGoBack()"
+        aria-label="Voltar para o formulário"
+        text=" ← Voltar"
+      >
+      </app-button>
+    </footer>
+  </section>
+</main>
