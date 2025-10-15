@@ -1,0 +1,15 @@
+<button
+  class="btn"
+  [disabled]="disabled || isLoading"
+  [attr.aria-busy]="isLoading"
+  (click)="handleClick()"
+>
+  <ng-container *ngIf="!isLoading; else loadingTemplate">
+    {{ buttonText }}
+  </ng-container>
+
+  <ng-template #loadingTemplate>
+    <span class="spinner" role="status" aria-label="Carregando..."></span>
+    Carregando...
+  </ng-template>
+</button>
