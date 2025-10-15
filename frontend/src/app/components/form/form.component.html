@@ -1,0 +1,118 @@
+<section class="form-container">
+  <div class="form-header">
+    <div class="logo">🍽️</div>
+    <h2>Calcule sua dieta</h2>
+  </div>
+
+  <form [formGroup]="dietForm" (ngSubmit)="onSubmit()" novalidate>
+    <h3>Dados pessoais</h3>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Digite seu nome..."
+          [class.invalid]="
+            dietForm.get('name')?.invalid && dietForm.get('name')?.touched
+          "
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Idade</label>
+        <input
+          id="age"
+          type="number"
+          formControlName="age"
+          placeholder="Ex: 28"
+          [class.invalid]="
+            dietForm.get('age')?.invalid && dietForm.get('age')?.touched
+          "
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="weight">Peso em kg</label>
+        <input
+          id="weight"
+          type="number"
+          formControlName="weight"
+          placeholder="Ex: 62"
+          [class.invalid]="
+            dietForm.get('weight')?.invalid && dietForm.get('weight')?.touched
+          "
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="height">Altura em cm</label>
+        <input
+          id="height"
+          type="number"
+          formControlName="height"
+          placeholder="Ex: 165"
+          [class.invalid]="
+            dietForm.get('height')?.invalid && dietForm.get('height')?.touched
+          "
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Sexo</label>
+        <select
+          id="gender"
+          formControlName="gender"
+          [class.invalid]="
+            dietForm.get('gender')?.invalid && dietForm.get('gender')?.touched
+          "
+        >
+          <option value="">Selecione o sexo</option>
+          <option value="Female">Feminino</option>
+          <option value="Male">Masculino</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="activityLevel">Nível de atividade</label>
+        <select
+          id="activityLevel"
+          formControlName="activityLevel"
+          [class.invalid]="
+            dietForm.get('activityLevel')?.invalid &&
+            dietForm.get('activityLevel')?.touched
+          "
+        >
+          <option value="">Selecione o nível de atividade</option>
+          <option
+            *ngFor="let level of activityLevelPerWeek"
+            [value]="level.value"
+          >
+            {{ level.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="objective">Objetivo</label>
+        <select
+          id="objective"
+          formControlName="objective"
+          [class.invalid]="
+            dietForm.get('objective')?.invalid &&
+            dietForm.get('objective')?.touched
+          "
+        >
+          <option value="">Selecione o seu objetivo</option>
+          <option *ngFor="let objective of objectiveList">
+            {{ objective.label }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <app-button type="submit" text="Gerar minha dieta"> </app-button>
+  </form>
+</section>
