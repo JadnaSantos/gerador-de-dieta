@@ -19,8 +19,6 @@ export const DietPlanRequestSchema = z.object({
     "maintain weight",
     "hypertrophy",
   ]),
-  intolerances: z.string().optional(),
-  restrictions: z.string().optional(),
   gender: z.enum(["Male", "Female"]),
 });
 
