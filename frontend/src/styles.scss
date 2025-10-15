@@ -8,11 +8,21 @@
 
 :root {
   --white: #ffff;
-  --black: #0000;
+  --black: #000;
+  --green: #4caf50;
+  --dark-gray: #555;
+  --vibrant-blue: #007bff;
+  --light-gray: #fafafa;
+  --ghost-white: #f9f9f9;
+}
+
+:host {
+  display: block;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 body {
-  background: var(--black);
+  background: var(--light-gray);
 }
 
 button {
