@@ -5,6 +5,10 @@ O sistema é composto por um **backend em Node.js (Fastify)** que realiza o proc
 
 ---
 
+## 🤓 Motivação
+
+Retomando os meus estudos do Angular decidir utilizar a versão Angular/cli = 16.1.0 para relembrar alguns conceitos
+
 ## 🚀 Tecnologias Utilizadas
 
 ### 🧠 Backend
@@ -17,7 +21,7 @@ O sistema é composto por um **backend em Node.js (Fastify)** que realiza o proc
 
 ### 💻 Frontend
 
-- [Angular](https://angular.dev/)
+- [Angular](https://angular.dev/) Angular/cli = 16.1.0
 - [RxJS](https://rxjs.dev/)
 - [Reactive Forms](https://angular.io/guide/reactive-forms)
 - [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) (notificações)
