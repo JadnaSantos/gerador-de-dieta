@@ -40,3 +40,93 @@ select,
 button {
   font: 400 1rem sans-serif;
 }
+
+body .toast-container .ngx-toastr {
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+body .toast-container .toast-success {
+  background-color: #43a047;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+body .toast-container.toast-top-right {
+  top: 1.5rem;
+  right: 1.5rem;
+  position: fixed;
+  z-index: 9999;
+}
+
+body .toast {
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.35s ease-out;
+}
+
+body .toast {
+  border-radius: 10px;
+  padding: 14px 18px 14px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+body .toast-success {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+body .toast-title {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 2px;
+  color: var(--white);
+}
+
+body .toast-message {
+  display: block;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--ghost-white);
+}
+
+body .toast-success::before {
+  content: "🥗";
+  font-size: 1.4rem;
+  margin-top: 2px;
+}
+
+body .toast-close-button {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  color: var(--white);
+  font-size: 1rem;
+  opacity: 0.8;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+body .toast-close-button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
