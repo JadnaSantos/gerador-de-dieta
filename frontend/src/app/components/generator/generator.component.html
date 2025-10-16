@@ -1,56 +1,53 @@
-<main class="generator-container">
-  <section class="generator-card" aria-labelledby="generator-title">
-    <header class="generator-header">
-      <h1 id="generator-title" class="generator-title">Gerador de Dietas</h1>
-      <p class="generator-subtitle">
-        Clique no botão abaixo para gerar sua dieta personalizada com base nos
-        seus dados.
-      </p>
-    </header>
+<div class="generator-container">
+  <div class="card">
+    <h2 class="title">Gerador de Dietas</h2>
+    <p class="subtitle">
+      Clique no botão abaixo para gerar sua dieta personalizada com base nos
+      seus dados.
+    </p>
 
     <div class="actions">
       <app-button
-        class="btn"
-        (clicked)="onGenerate()"
-        [attr.aria-busy]="isLoading"
-        [text]="
-          isLoading ? 'Parar geração da dieta' : 'Gerar dieta personalizada'
+        class="primary"
+        (click)="onGenerate()"
+        [disabled]="!data"
+        [buttonText]="
+          isStreaming ? '⏸️ Parar geração' : '✨ Gerar dieta personalizada'
         "
       >
-        <span *ngIf="!isLoading">⚡ Gerar dieta</span>
-        <span *ngIf="isLoading" class="loading">
-          <span class="spinner" role="status" aria-label="Carregando..."></span>
-          Gerando dieta...
-        </span>
       </app-button>
     </div>
 
-    <article
-      class="result-area"
-      *ngIf="output; else emptyState"
-      aria-live="polite"
-      aria-atomic="false"
-    >
-      <h2 class="visually-hidden">Resultado da dieta</h2>
-      <pre tabindex="0">{{ output }}</pre>
-    </article>
+    <div class="output-area" *ngIf="output || isStreaming">
+      <div class="output-header">
+        <h3>Sua Dieta Personalizada</h3>
+        <div class="output-actions" *ngIf="output && !isStreaming">
+          <app-button
+            class="icon"
+            (click)="copyToClipboard()"
+            title="Copiar dieta"
+          >
+            📋
+          </app-button>
+          <app-button
+            class="icon"
+            (click)="downloadDiet()"
+            title="Baixar dieta"
+          >
+            💾
+          </app-button>
+        </div>
+      </div>
 
-    <ng-template #emptyState>
-      <section class="placeholder" role="status" aria-live="polite">
-        <p>
-          Nenhum resultado gerado ainda. Clique em “Gerar dieta” para começar.
-        </p>
-      </section>
-    </ng-template>
+      <div class="output-content" [class.streaming]="isStreaming">
+        <markdown [data]="output" class="markdown-output"></markdown>
+      </div>
+    </div>
 
-    <footer class="generator-footer">
-      <app-button
-        class="btn-back"
-        (click)="handleGoBack()"
-        aria-label="Voltar para o formulário"
-        text=" ← Voltar"
-      >
+    <div class="footer">
+      <app-button class="btn btn-secondary" (click)="handleGoBack()">
+        ← Voltar
       </app-button>
-    </footer>
-  </section>
-</main>
+    </div>
+  </div>
+</div>
