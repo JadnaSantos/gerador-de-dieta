@@ -67,9 +67,11 @@ O sistema é composto por um **backend em Node.js (Fastify)** que realiza o proc
 
 ---
 
-🧪 Execução local
+## 🧪 Execução local
 
 ### 🔧 Backend
+
+Para executar backend é necessário criar uma API_KEY da openai https://openai.com/pt-BR/api/
 
 ```bash
 cd backend
