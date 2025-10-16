@@ -2,6 +2,7 @@ export type ActivityLevel =
   | 'sedentary'
   | 'two_per_week'
   | 'three_per_week'
+  | 'four_per_week'
   | 'five_per_week'
   | 'six_per_week';
 

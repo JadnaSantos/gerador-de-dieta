@@ -35,6 +35,7 @@ export class FormComponent {
     { value: 'sedentary', label: 'Sedentário' },
     { value: 'two_per_week', label: '2x por semana' },
     { value: 'three_per_week', label: '3x por semana' },
+    { value: 'four_per_week', label: '4x por semana' },
     { value: 'five_per_week', label: '5x por semana' },
     { value: 'six_per_week', label: '6x por semana' },
   ];

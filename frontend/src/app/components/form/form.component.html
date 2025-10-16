@@ -106,13 +106,16 @@
           "
         >
           <option value="">Selecione o seu objetivo</option>
-          <option *ngFor="let objective of objectiveList">
+          <option
+            *ngFor="let objective of objectiveList"
+            [value]="objective.value"
+          >
             {{ objective.label }}
           </option>
         </select>
       </div>
     </div>
 
-    <app-button type="submit" text="Gerar minha dieta"> </app-button>
+    <app-button type="submit"> Gerar minha dieta</app-button>
   </form>
 </section>
