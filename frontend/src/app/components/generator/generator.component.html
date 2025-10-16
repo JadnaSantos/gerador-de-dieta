@@ -1,0 +1,53 @@
+<div class="generator-container">
+  <div class="card">
+    <h2 class="title">Gerador de Dietas</h2>
+    <p class="subtitle">
+      Clique no botão abaixo para gerar sua dieta personalizada com base nos
+      seus dados.
+    </p>
+
+    <div class="actions">
+      <app-button
+        class="primary"
+        (click)="onGenerate()"
+        [disabled]="!data"
+        [buttonText]="
+          isStreaming ? '⏸️ Parar geração' : '✨ Gerar dieta personalizada'
+        "
+      >
+      </app-button>
+    </div>
+
+    <div class="output-area" *ngIf="output || isStreaming">
+      <div class="output-header">
+        <h3>Sua Dieta Personalizada</h3>
+        <div class="output-actions" *ngIf="output && !isStreaming">
+          <app-button
+            class="icon"
+            (click)="copyToClipboard()"
+            title="Copiar dieta"
+          >
+            📋
+          </app-button>
+          <app-button
+            class="icon"
+            (click)="downloadDiet()"
+            title="Baixar dieta"
+          >
+            💾
+          </app-button>
+        </div>
+      </div>
+
+      <div class="output-content" [class.streaming]="isStreaming">
+        <markdown [data]="output" class="markdown-output"></markdown>
+      </div>
+    </div>
+
+    <div class="footer">
+      <app-button class="btn btn-secondary" (click)="handleGoBack()">
+        ← Voltar
+      </app-button>
+    </div>
+  </div>
+</div>

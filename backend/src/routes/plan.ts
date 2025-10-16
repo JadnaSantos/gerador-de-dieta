@@ -6,8 +6,6 @@ export async function planRoutes(app: FastifyInstance) {
   app.post("/plan", async (request, reply) => {
     reply.raw.setHeader("Access-Control-Allow-Origin", "*");
     reply.raw.setHeader("Content-Type", "text/plain; charset=utf-8");
-
-    reply.raw.setHeader("Content-Type", "text/event-stream");
     reply.raw.setHeader("Cache-Control", "no-cache");
     reply.raw.setHeader("Connection", "keep-alive");
 

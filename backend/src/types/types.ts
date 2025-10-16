@@ -7,20 +7,18 @@ export const DietPlanRequestSchema = z.object({
   weight: z.number().positive(),
   activityLevel: z.enum([
     "sedentary",
-    "two times a week",
-    "three times a week",
-    "for times a week",
-    "five times a week",
-    "six time a week",
+    "two_per_week",
+    "three_per_week",
+    "four_per_week",
+    "five_per_week",
+    "six_per_week",
   ]),
   objective: z.enum([
-    "lose weight",
-    "gain muscle mass",
-    "maintain weight",
+    "lose_weight",
+    "gain_muscle",
+    "maintain_weight",
     "hypertrophy",
   ]),
-  intolerances: z.string().optional(),
-  restrictions: z.string().optional(),
   gender: z.enum(["Male", "Female"]),
 });
 
