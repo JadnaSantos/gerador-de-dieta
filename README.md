@@ -102,5 +102,3 @@ ng start
 ## 👩🏿‍💻 Desenvolvido por
 
 Jadna Silva
-Front-end Developer | Go | Node.js | Angular | AWS | TypeScript
-https://www.linkedin.com/in/jadna-silva/
