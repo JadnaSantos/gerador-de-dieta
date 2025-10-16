@@ -3,15 +3,13 @@ export interface DietData {
   age: number;
   height: number;
   weight: number;
-  gender: 'masculino' | 'feminino';
+  gender: 'Male' | 'Female';
   activityLevel:
-    | 'Sedentário'
-    | '2x por semana'
-    | '3x por semana'
-    | '5x por semana';
-  objective:
-    | 'perda_de_peso'
-    | 'hipertrofia'
-    | 'ganhar_massa_muscular'
-    | 'manter_peso';
+    | 'sedentary'
+    | 'two_per_week'
+    | 'three_per_week'
+    | 'four_per_week'
+    | 'five_per_week'
+    | 'six_per_week';
+  objective: 'lose_weight' | 'gain_muscle' | 'maintain_weight' | 'hypertrophy';
 }
