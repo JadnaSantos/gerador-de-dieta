@@ -3,9 +3,16 @@
   [disabled]="disabled || isLoading"
   [attr.aria-busy]="isLoading"
   (click)="handleClick()"
+  [ngClass]="{
+    'btn-primary': variant === 'primary',
+    'btn-secondary': variant === 'secondary',
+    'btn-icon': variant === 'icon'
+  }"
+  [attr.aria-busy]="isLoading"
 >
   <ng-container *ngIf="!isLoading; else loadingTemplate">
-    {{ buttonText }}
+    <ng-content *ngIf="!buttonText; else textBlock"></ng-content>
+    <ng-template #textBlock>{{ buttonText }}</ng-template>
   </ng-container>
 
   <ng-template #loadingTemplate>

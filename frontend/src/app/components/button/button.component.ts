@@ -6,9 +6,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {
-  @Input({ required: true, alias: 'text' }) buttonText: string = '';
+  @Input() buttonText: string = '';
+
   @Input() disabled: boolean = false;
+
   @Input() isLoading: boolean = false;
+
+  @Input() variant: 'primary' | 'secondary' | 'icon' = 'primary';
 
   @Output() clicked = new EventEmitter<void>();
 
