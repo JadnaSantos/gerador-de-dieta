@@ -26,7 +26,7 @@ Retomando os meus estudos do Angular decidir utilizar a versão Angular/cli = 16
 - [Reactive Forms](https://angular.io/guide/reactive-forms)
 - [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) (notificações)
 - [Ngx-Markdown](https://www.npmjs.com/package/ngx-markdown) para renderizar markdown
-- [Bootstrap](https://getbootstrap.com/) (base de estilo)
+- [SAAS](https://getbootstrap.com/](https://sass-lang.com/) (base de estilo)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ---
